@@ -39,6 +39,8 @@ jobs:
               uses: samuelmeuli/action-snapcraft@v1
               # Only install Snapcraft on Ubuntu
               if: startsWith(matrix.os, 'ubuntu')
+              with:
+                  snapcraft_token: ${{ secrets.snapcraft_token }}
               env:
                   SNAPCRAFT_STORE_CREDENTIALS: ${{ secrets.SNAPCRAFT_TOKEN }}
 
